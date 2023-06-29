@@ -1,13 +1,15 @@
+import React, { useState } from "react";
+
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) => {
-  let title = props.title;
+  //hooks start with 'use' and must be called in react functions
+  const [title, setTitle] = useState(props.title); //returns array of currentState AND a function we can use to assign a new value
 
   const clickHandler = () => {
-    title = "updated";
-    console.log(title);
+    setTitle("Updated!");
   };
 
   return (
