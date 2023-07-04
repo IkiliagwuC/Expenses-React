@@ -24,13 +24,14 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     //prevent the page from sendign request and reloading
     event.preventDefault();
+
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
 
-    props.onSaveExpenseData(expenseData); //console.log(expenseData);
+    props.onSaveExpenseData(expenseData); //console.log(expenseData); this data is fired from it submit handler
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");

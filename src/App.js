@@ -1,5 +1,3 @@
-import React from "react";
-
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -32,10 +30,17 @@ const App = () => {
   ];
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={AddExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
+};
+
+//goal is to recieve data from child component to add it to the expenses array.
+
+const AddExpenseHandler = (expenses) => {
+  console.log(expenses);
+  console.log("from the app.js");
 };
 
 export default App;
